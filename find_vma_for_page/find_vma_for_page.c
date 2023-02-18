@@ -69,6 +69,7 @@ static int __init my_init(void)
                 printk("\tpage addr: 0x%lx, index: 0x%lx, counts:%d\n", 
                      (unsigned long)page/sizeof(*page), page->index, ++counts);
                 find_vma_for_page(page);
+		put_page(page);
             }
         }
     }
